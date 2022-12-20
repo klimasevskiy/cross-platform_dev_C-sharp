@@ -1,0 +1,97 @@
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing.Printing;
+using System.Reflection.PortableExecutable;
+using System.Runtime.InteropServices;
+
+namespace lab1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        List<Contacts> contacts = new List<Contacts>();               
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string file = "D:\\unik\\kpp\\sharp\\Lab2\\contacts.txt";
+                List<string> lines = File.ReadAllLines(file).ToList();
+                foreach (var line in lines)
+                {
+                    string[] entries = line.Split(',');
+                    Contacts newContact = new Contacts();
+                    newContact.Name = entries[0];
+                    newContact.Birth = Convert.ToDateTime(entries[1]);
+                    newContact.Number = entries[2];
+                    newContact.City = entries[3];
+                    newContact.Created_date_time = Convert.ToDateTime(entries[4]);
+                    contacts.Add(newContact);
+                }
+
+                Update_ListView(contacts);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var sortedPeople2 = contacts.OrderBy(p => p.Name);
+            listView1.Items.Clear();
+            foreach (var person in sortedPeople2)
+            {
+                ListViewItem item = new ListViewItem(person.Name);
+                item.SubItems.Add(person.Birth.ToString("MM/dd/yyyy"));
+                item.SubItems.Add(person.Number);
+                item.SubItems.Add(person.City);
+                item.SubItems.Add(Convert.ToString(person.Created_date_time));
+                listView1.Items.Add(item);
+            }
+        }
+        public void Update_ListView(List<Contacts> numbers)
+        {
+            listView1.Items.Clear();
+            foreach (var person in numbers)
+            {
+                ListViewItem item = new ListViewItem(person.Name);
+                item.SubItems.Add(person.Birth.ToString("MM/dd/yyyy"));
+                item.SubItems.Add(person.Number);
+                item.SubItems.Add(person.City);
+                item.SubItems.Add(Convert.ToString(person.Created_date_time));
+                listView1.Items.Add(item);
+            }
+
+        }
+        public int ToInt(string str)
+        {
+            return Convert.ToInt32(str);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Update_ListView(contacts);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            List<Contacts> Sort_contacts = contacts;
+            listView1.Items.Clear();
+            Sort_contacts.Sort((x, y) => x.Birth.CompareTo(y.Birth));
+            Update_ListView(Sort_contacts);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<Contacts> Sort_contacts = contacts;
+            listView1.Items.Clear();
+            Sort_contacts.Sort((x, y) => x.Created_date_time.CompareTo(y.Created_date_time));
+            Update_ListView(Sort_contacts);
+        }
+    }
+}
