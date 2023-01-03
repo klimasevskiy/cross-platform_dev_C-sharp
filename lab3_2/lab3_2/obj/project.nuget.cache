@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "p5Mcd+eABXz/siKfHfMQy13xVhjkbb+HmryREYgHaqcn3exrYFnevY4XmfeQIYlgSo80Svgf4Qq/Z7Mz5KaWxw==",
+  "success": true,
+  "projectFilePath": "C:\\labs\\charp\\var3\\lab3_2\\lab3_2\\lab3_2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\smail\\.nuget\\packages\\simpletcp.core\\1.0.4\\simpletcp.core.1.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

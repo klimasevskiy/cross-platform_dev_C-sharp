@@ -1,0 +1,101 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "SimpleTCP.Core/1.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/SimpleTCP.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SimpleTCP.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SimpleTCP.Core/1.0.4": {
+      "sha512": "IOZ3lyf+kdaOSbuIY/BAcDlAekPtSCYJCrD0QoihtdiY+7kB/5sUa8hfKuNUWXhZ322Bl4Xvej+Jay3eTDCgNA==",
+      "type": "package",
+      "path": "simpletcp.core/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SimpleTCP.Core.dll",
+        "simpletcp.core.1.0.4.nupkg.sha512",
+        "simpletcp.core.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "SimpleTCP.Core >= 1.0.4"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\smail\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\labs\\charp\\var3\\lab3_2Client\\lab3_2Client\\lab3_2Client.csproj",
+      "projectName": "lab3_2Client",
+      "projectPath": "C:\\labs\\charp\\var3\\lab3_2Client\\lab3_2Client\\lab3_2Client.csproj",
+      "packagesPath": "C:\\Users\\smail\\.nuget\\packages\\",
+      "outputPath": "C:\\labs\\charp\\var3\\lab3_2Client\\lab3_2Client\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\smail\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "SimpleTCP.Core": {
+            "target": "Package",
+            "version": "[1.0.4, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
